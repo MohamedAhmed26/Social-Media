@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <!-- Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- Start Modal -->
+    <!-- Login -->
+        <div class="modal fade LoginForm" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Username:</label>
+                        <input type="text" class="form-control user-login-input" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Password:</label>
+                        <input type="password" class="form-control password-login-input" id="message-text"></input>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btnLoginForm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="loginbtnclicked()">Login</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+    <!-- Signup -->
+                <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel" data-bs-target="#staticBackdrop">Sign Up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <div class="mb-3">
+                            <label for="usernamee" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="usernamee">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Email:</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="imglogo" class="col-form-label">Img:</label>
+                            <input type="file" class="form-control" id="imglogo">
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="signupFormBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="signUpBtn()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Sign Up</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+    <!-- Alert modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Alert</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBodyy">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    <!-- Create post -->
+        <div class="modal fade" id="createpost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Post</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgpost" class="col-form-label">Img:</label>
+                        <input type="file" class="form-control" id="imgpost">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="btncreatepost" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="createPost()">Create</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    <!-- End Modal -->
+    <!-- Start Nav -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Media Hub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="parent-nav collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dark-modee" href="#">Dark mode</a>
+                        </li>
+                    </ul>
+                    <div class="log-btn">
+                        <button type="button" class="btn btn-outline-success me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Log in
+                        </button>
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModall">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    <!-- End Nav -->
+    <!-- Start Posts -->
+    <div class="post">
+        <div class="container-fluid">
+            <div class="post-box-details">
+                <div class="post-box">
+                    <div class="info-man-post">
+                        <img src="imgs/10.png" alt="" class="img-logo-one-post" style="height: 50px;"/>
+                        <div class="title-man-post">
+                            <h2 class="nameOnePost">Mohamed</h2>
+                            <p class="timeOnePost">2 Min age</p>
+                        </div>
+                    </div>
+                    <img src="imgs/4.jpg" alt="" class="imgOnePost"/>
+                    <h3 class="titleOnePost">Lorem ipsum dolor sit.</h3>
+                    <span class="bodyOnePost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                        nostrum.</span>
+                    <div class="comments">
+                        <span class="commentOnePost"><i class="fa-solid fa-chevron-down"></i> (0) Comments</span>
+                        <div class="comments-inn">
+                            
+                        </div>
+                        <div class="inp-parent">
+                        <input type="text" class="w-100 comment-in" placeholder="Write a comment">
+                        <i onclick="writeComment()" class="fa-solid fa-upload"></i>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Posts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script>
+    let getPostId = new URLSearchParams(window.location.search);
+    let id = getPostId.get("postId");
+    console.log(id);
+    axios.get(`https://tarmeezacademy.com/api/v1/posts/${id}`).then((response) => {
+        console.log(response.data.data)
+        console.log(response.data.data.author.name)
+        console.log(response.data.data.comments_count)
+        let comments = response.data.data.comments
+        
+        let postLogoImg = response.data.data.author.profile_image
+        let postUsername = response.data.data.author.username
+        let postcreatedAt = response.data.data.created_at
+        let postImg = response.data.data.image
+        let postTitle = response.data.data.title
+        let postBody = response.data.data.body
+
+        if (postUsername == null) {
+            postUsername = "name not found";
+            }
+            if (postBody == null) {
+                postBody = "body not found";
+            }
+            if (Object.keys(postLogoImg).length == 0) {
+                postLogoImg = `imgs/profile.png`;
+            }
+        console.log(document.getElementsByClassName("img-logo-one-post")[0])
+        document.getElementsByClassName("img-logo-one-post")[0].src = postLogoImg;
+        document.getElementsByClassName("nameOnePost")[0].innerText = postUsername;
+        document.getElementsByClassName("timeOnePost")[0].innerText = postcreatedAt;
+        document.getElementsByClassName("imgOnePost")[0].src = postImg;
+        document.getElementsByClassName("titleOnePost")[0].innerText = postTitle;
+        document.getElementsByClassName("bodyOnePost")[0].innerText = postBody;
+        document.getElementsByClassName("commentOnePost")[0].innerHTML = `<i class="fa-solid fa-chevron-down"></i> (${response.data.data.comments_count}) Comments`;
+        if (response.data.data.comments_count > 0) {
+        for (comment of comments) {
+            let commentParent = document.getElementsByClassName("comments-inn")[0];
+            
+            let logoImgComment = comment.author.profile_image;
+            let usernameComment = comment.author.username;
+            let bodyComment = comment.body;
+            if (usernameComment == null) {
+                usernameComment = "name not found";
+            }
+            if (bodyComment == null) {
+                bodyComment = "body not found";
+            }
+            if (Object.keys(logoImgComment).length == 0) {
+                logoImgComment = `imgs/profile.png`;
+            }
+            console.log(commentParent);
+            let commentt = `<div class="comment">
+                                <div class="infooo">
+                                    <img src="${logoImgComment}" class="logoComment" alt="">
+                                    <span class="nameComment">${usernameComment}</span>
+                                </div>
+                                <p class="bodyComment">${bodyComment}</p>
+                            </div>`
+
+            commentParent.innerHTML += commentt;
+    }
+    }
+    }).catch((error) => {
+        console.log(error)
+    })
+    if (localStorage.getItem("token") == null) {
+        let inputParent = document.getElementsByClassName("inp-parent")[0];
+        inputParent.style.display = "none";
+    } else {
+        function writeComment() {
+        let commentInput = document.getElementsByClassName("comment-in")[0].value
+        let paramss = {
+            "body" : commentInput,
+        }
+        let headers = {
+            "Content-Type": "multipart/form-data",
+            "authorization": `Bearer ${localStorage.getItem("token")}`,
+        };
+        axios.post(`https://tarmeezacademy.com/api/v1/posts/${id}/comments`, paramss, {
+            "headers" : headers,
+        }).then((response) => {
+            location.reload();
+        }).catch((error) => {
+            alert(error)
+        })
+    }
+    }
+    </script>
+</body>
+</html>

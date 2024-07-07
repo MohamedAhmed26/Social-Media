@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,191 +14,201 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <!-- Start Modal -->
-        <!-- Login -->
-        <div class="modal fade LoginForm" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Login -->
+    <div class="modal fade LoginForm" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Username:</label>
-                    <input type="text" class="form-control user-login-input" id="recipient-name">
-                    </div>
-                    <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Password:</label>
-                    <input type="password" class="form-control password-login-input" id="message-text"></input>
-                    </div>
-                </form>
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control user-login-input" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control password-login-input" id="message-text"></input>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button id="btnLoginForm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="loginbtnclicked()">Login</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btnLoginForm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button"
+                        class="btn btn-primary" data-bs-dismiss="modal" onclick="loginbtnclicked()">Login</button>
                 </div>
             </div>
-            </div>
         </div>
-        <!-- Signup -->
-            <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    </div>
+    <!-- Signup -->
+    <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel" data-bs-target="#staticBackdrop">Sign Up</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
-                    <div class="mb-3">
-                        <label for="usernamee" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" id="usernamee">
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" id="email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="col-form-label">Password:</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="imglogo" class="col-form-label">Img:</label>
-                        <input type="file" class="form-control" id="imglogo">
-                    </div>
+                        <div class="mb-3">
+                            <label for="usernamee" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="usernamee">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Email:</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="imglogo" class="col-form-label">Img:</label>
+                            <input type="file" class="form-control" id="imglogo">
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="signupFormBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="signUpBtn()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Sign Up</button>
+                    <button id="signupFormBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                        onclick="signUpBtn()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Sign
+                        Up</button>
                 </div>
-                </div>
             </div>
-            </div>
-        <!-- Alert modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Alert</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="modalBodyy">
-            ...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-            </div>
-        </div>
         </div>
     </div>
-        <!-- Create post -->
-    <div class="modal fade" id="createpost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Alert modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Create Post</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="title" class="col-form-label">Title:</label>
-                    <input type="text" class="form-control" id="title">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Alert</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="col-form-label">Description:</label>
-                    <input type="text" class="form-control" id="description">
+                <div class="modal-body" id="modalBodyy">
+                    ...
                 </div>
-                <div class="mb-3">
-                    <label for="imgpost" class="col-form-label">Img:</label>
-                    <input type="file" class="form-control" id="imgpost">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" id="btncreatepost" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="createPost()">Create</button>
             </div>
         </div>
+    </div>
+    <!-- Create post -->
+    <div class="modal fade" id="createpost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgpost" class="col-form-label">Img:</label>
+                        <input type="file" class="form-control" id="imgpost">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btncreatepost" class="btn btn-primary" data-bs-dismiss="modal"
+                        data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="createPost()">Create</button>
+                </div>
+            </div>
         </div>
     </div>
     <!-- points (edit and del post) -->
     <div class="modal fade" id="points" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit post</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="editPost" data-bs-toggle="modal" data-bs-target="#editPostContent">
+                        <i class="fa-solid fa-pen"></i>
+                        Edit Post
+                    </p>
+                    <p class="delPost" data-bs-toggle="modal" data-bs-target="#deletePostContentModal">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete post
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                </div>
             </div>
-            <div class="modal-body">
-            <p class="editPost" data-bs-toggle="modal" data-bs-target="#editPostContent">
-                <i class="fa-solid fa-pen"></i>
-                Edit Post
-            </p>
-            <p class="delPost" data-bs-toggle="modal" data-bs-target="#deletePostContentModal">
-                <i class="fa-solid fa-trash"></i>
-                Delete post
-            </p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-            </div>
-        </div>
         </div>
     </div>
 
     <!-- Edit post -->
     <div class="modal fade" id="editPostContent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit post</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="titleEdit" class="col-form-label">Title:</label>
-                    <input type="text" class="form-control" id="titleEdit">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                    <label for="contentEdit" class="col-form-label">Content:</label>
-                    <input type="text" class="form-control" id="contentEdit">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="titleEdit" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="titleEdit">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contentEdit" class="col-form-label">Content:</label>
+                        <input type="text" class="form-control" id="contentEdit">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="editpost()">Done</button>
                 </div>
             </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="editpost()">Done</button>
-            </div>
-        </div>
         </div>
     </div>
 
     <!-- Del post -->
-    <div class="modal fade" id="deletePostContentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deletePostContentModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete post</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to delete this post?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        onclick="delPost()">Delete</button>
+                </div>
             </div>
-            <div class="modal-body">
-            <p>Do you want to delete this post?</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="delPost()">Delete</button>
-            </div>
-        </div>
         </div>
     </div>
     <!-- End Modal -->
@@ -222,10 +233,12 @@
                     </li>
                 </ul>
                 <div class="log-btn">
-                    <button type="button" class="btn btn-outline-success me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-outline-success me-1" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
                         Log in
                     </button>
-                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModall">
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        data-bs-target="#exampleModall">
                         Register
                     </button>
                 </div>
@@ -432,4 +445,5 @@
         crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
+
 </html>

@@ -67,9 +67,9 @@ function getPosts(page) {
                 profileImage = `imgs/profile.png`;
             }
             var postHtml = ` <div class="post-box">
-            <div class="info-man-post" onclick="postInfoClicked(${post.author.id})">
-                <img class="profileImgMain" src="${profileImage}" alt="" style="border-radius:50%; height:50px;" />
-                <div class="title-man-post">
+            <div class="info-man-post">
+                <img class="profileImgMain" src="${profileImage}" onclick="postInfoClicked(${post.author.id})" style="border-radius:50%; height:50px;" />
+                <div class="title-man-post" onclick="postInfoClicked(${post.author.id})">
                 <h2>${name}</h2>
                 <p>${createdTime}</p>
                 </div>
